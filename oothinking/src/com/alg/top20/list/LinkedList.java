@@ -58,8 +58,11 @@ public class LinkedList implements IList {
 
 	@Override
 	public void display() {
-		// TODO Auto-generated method stub
-
+		ListNode current;
+		for(current = head.next; null != current; current = current.next) {
+			System.out.print(current.data+ " ");
+		}
+		System.out.println();
 	}
 
 }

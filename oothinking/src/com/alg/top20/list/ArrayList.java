@@ -6,7 +6,9 @@ public class ArrayList implements IList {
 	
 	@Override
 	public void display() {
-		// TODO Auto-generated method stub
+		for(Integer e:array)
+			System.out.print(e + " ");
+		System.out.println();
 		
 	}
 
@@ -17,7 +19,14 @@ public class ArrayList implements IList {
 
 	@Override
 	public void add(Integer e) {
-		
+		Integer[] newarray;
+		if(size == array.length) {
+			newarray = new Integer[2*size];
+			for(int i = 0; i < size; ++i)
+				newarray[i] = array[i];
+			array = newarray;
+		}
+		array[size++] = e;
 	}
 
 	@Override
